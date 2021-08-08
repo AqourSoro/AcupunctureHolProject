@@ -137,6 +137,7 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 1203903153855963514, guid: 9e6f0839b12111a4f884134d0b04908b, type: 2}
   - {fileID: 5253357847919616498, guid: df0badd698d44204abc44360d96b7941, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -615,13 +616,13 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: AcuProject
-  metroPackageVersion: 1.0.0.0
+  metroPackageVersion: 1.0.0.3
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 0094a27380aad801
-  metroApplicationDescription: Template_3D
+  metroApplicationDescription: AcuProject
   wsaImages: {}
   metroTileShortName: AcupunctureHolProject
   metroTileShowName: 0
