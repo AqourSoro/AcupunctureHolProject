@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: VEC
   productName: AcupunctureHolProject
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 265ed1a62f59b984fad2ac7c42c92acc, type: 3}
   m_ShowUnitySplashAds: 0
   m_AdsAndroidGameId: 
   m_AdsIosGameId: 
@@ -137,7 +137,6 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 1203903153855963514, guid: 9e6f0839b12111a4f884134d0b04908b, type: 2}
   - {fileID: 5253357847919616498, guid: df0badd698d44204abc44360d96b7941, type: 2}
-  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -616,14 +615,35 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: AcuProject
-  metroPackageVersion: 1.0.0.3
+  metroPackageVersion: 1.0.1.1
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 0094a27380aad801
   metroApplicationDescription: AcuProject
-  wsaImages: {}
+  wsaImages:
+    65636: Assets/IconSet/Custom/Acu-50x50.png
+    65661: Assets/IconSet/Custom/Acu-63x63.png
+    65686: Assets/IconSet/Custom/Acu-75x75.png
+    65736: Assets/Textures/Acu100.png
+    65936: Assets/Textures/Acu200.png
+    131272: Assets/IconSet/Custom 1/Acu-1240x600.png
+    2031632: Assets/IconSet/Windows/Square44x44Logo.targetsize-16.png
+    2031640: Assets/IconSet/Windows/Square44x44Logo.targetsize-24.png
+    2031648: Assets/IconSet/Windows/Square44x44Logo.targetsize-32.png
+    2031664: Assets/IconSet/Windows/Square44x44Logo.targetsize-48.png
+    2031716: Assets/Textures/Acu44.png
+    2031816: Assets/IconSet/Custom/Acu-88x88.png
+    2031872: Assets/IconSet/Windows/Square44x44Logo.targetsize-256.png
+    2097252: Assets/IconSet/Custom/Acu-71x71.png
+    2097352: Assets/IconSet/Custom 1/Acu-142x142.png
+    2162788: Assets/IconSet/Windows/Square150x150Logo.scale-100.png
+    2162813: Assets/IconSet/Windows/Square150x150Logo.scale-125.png
+    2162888: Assets/IconSet/Custom/Acu-300x300.png
+    2228324: Assets/IconSet/Windows/Square310x310Logo.scale-100.png
+    2293860: Assets/IconSet/Custom/Acu-310x150.png
+    2293960: Assets/IconSet/Custom 1/Acu-620x300.png
   metroTileShortName: AcupunctureHolProject
   metroTileShowName: 0
   metroMediumTileShowName: 0

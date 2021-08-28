@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2e2731103cdda44af77955a0b4814c, type: 3}
   m_Name: AppRemotingPlugin WSA
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Holographic Remoting remote app
   version: 1.0.0
   featureIdInternal: com.microsoft.openxr.feature.appremoting
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cf79659a011bd419c7a2a30eb74e9a, type: 3}
   m_Name: EyeGazeInteraction Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Eye Gaze Interaction Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.eyetracking
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f34c86d1a130cc45a438373e1e8a4fc, type: 3}
   m_Name: PlayModeRemotingPlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Holographic Remoting for Play Mode
   version: 1.0.0
   featureIdInternal: com.microsoft.openxr.feature.playmoderemoting
@@ -959,7 +959,7 @@ MonoBehaviour:
   company: Microsoft
   priority: -100
   required: 0
-  m_remoteHostName: 
+  m_remoteHostName: 192.168.137.74
   m_remoteHostPort: 8265
   m_maxBitrate: 20000
   m_videoCodec: 0
@@ -1072,8 +1072,8 @@ MonoBehaviour:
   - {fileID: 3633082524690464790}
   - {fileID: -2216342175100935321}
   - {fileID: 6591473576003317077}
-  m_renderMode: 1
-  m_depthSubmissionMode: 1
+  m_renderMode: 0
+  m_depthSubmissionMode: 2
 --- !u!114 &1475418588474867182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,7 +1447,6 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -4369608819966459181}
   - {fileID: 691461173382767678}
   - {fileID: -314179912766380091}
   - {fileID: 6258339977728488753}
@@ -1461,9 +1460,10 @@ MonoBehaviour:
   - {fileID: 369259373000721524}
   - {fileID: -4404218363537001052}
   - {fileID: 8356160609447940411}
-  - {fileID: 87492023802354594}
   - {fileID: -3424761898946721735}
   - {fileID: 234167009880086769}
+  - {fileID: 87492023802354594}
+  - {fileID: -4369608819966459181}
   m_renderMode: 1
   m_depthSubmissionMode: 2
 --- !u!114 &4970036698852237270

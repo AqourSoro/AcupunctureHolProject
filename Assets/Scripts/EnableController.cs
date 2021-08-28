@@ -7,16 +7,18 @@ using UnityEngine;
 public class EnableController : MonoBehaviour
 {
     private TapToPlace tpComponents;
-    public TextMeshPro inforTP;
+    public GameObject MeridianSystem;
+    public TextMesh textTP;
+    public TextMesh textM;
+    public TextMesh textN;
 
     void Start()
     {
         tpComponents = this.GetComponent<TapToPlace>();
-        inforTP.text = "Enabled";
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
@@ -26,13 +28,43 @@ public class EnableController : MonoBehaviour
         if(tpComponents.enabled == false)
         {
             tpComponents.enabled = true;
-            inforTP.text = "Enabled";
+            textTP.text = "On";
         }
         else
         {
             tpComponents.enabled = false;
-            inforTP.text = "Disabled";
+            textTP.text = "Off";
         }
 
     }
+
+    
+    public void TPSButtonControl()
+    {
+        if (tpComponents.enabled == false)
+        {
+            tpComponents.enabled = true;
+            textTP.text = "On";
+        }
+        else
+        {
+            tpComponents.enabled = false;
+            textTP.text = "Off";
+        }
+    }
+
+    public void MeridianButtonControl()
+    {
+        if (MeridianSystem.active == false)
+        {
+            MeridianSystem.SetActive(true);
+            textM.text = "On";
+        }
+        else
+        {
+            MeridianSystem.SetActive(false);
+            textM.text = "Off";
+        }
+    }
+
 }
