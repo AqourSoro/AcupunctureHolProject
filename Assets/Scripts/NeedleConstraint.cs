@@ -2,13 +2,15 @@ using Microsoft.MixedReality.Toolkit.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class NeedleConstraint : MonoBehaviour
 {
 
     private MoveAxisConstraint axis;
     public GameObject SingalCube;
     public GameObject Body;
+
+
+
 
     private MeridianReactionController mcontroller;
 
@@ -24,7 +26,7 @@ public class NeedleConstraint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,21 +35,32 @@ public class NeedleConstraint : MonoBehaviour
         if (other.gameObject.tag == "Body" && this.gameObject.tag == "Needles")
         {
             Debug.Log("Hit");
-            var cubeRenderer = SingalCube.GetComponent<Renderer>();
-            cubeRenderer.material.SetColor("_Color", Color.green);
+            //var cubeRenderer = SingalCube.GetComponent<Renderer>();
+            //cubeRenderer.material.SetColor("_Color", Color.green);
             axis.enabled = true;
         }
-
-        if (other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
+        if(other.GetType() == typeof(SphereCollider))
         {
-            if (other.transform.parent.gameObject.name == "RenPoints")
+            if (other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
             {
-                Debug.Log("Hit Points: " + other.gameObject.name);
-                mcontroller.MaterialChanger(0, true);
+                axis.enabled = true;
+                if (other.transform.parent.gameObject.name == "RenPoints")
+                {
+                    Debug.Log("Hit Points: " + other.gameObject.name);
+                    mcontroller.MaterialChanger("Ren", true);
+                    mcontroller.PMChanger(other.gameObject, true);
+                }
+                else if(other.transform.parent.gameObject.name == "LMH-TaiyinPoints")
+                {
+                    mcontroller.MaterialChanger("LMH_Taiyin", true);
+                    mcontroller.PMChanger(other.gameObject, true);
+                }
             }
         }
+        
 
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -55,19 +68,33 @@ public class NeedleConstraint : MonoBehaviour
         if (other.gameObject.tag == "Body" && this.gameObject.tag == "Needles")
         {
             Debug.Log("Leave");
-            var cubeRenderer = SingalCube.GetComponent<Renderer>();
-            cubeRenderer.material.SetColor("_Color", Color.red);
+            //var cubeRenderer = SingalCube.GetComponent<Renderer>();
+            //cubeRenderer.material.SetColor("_Color", Color.red);
             axis.enabled = false;
         }
 
-        if(other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
+        if(other.GetType() == typeof(SphereCollider))
         {
-            if(other.transform.parent.gameObject.name == "RenPoints")
+            if(other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
             {
-                Debug.Log("Leave Points: " + other.gameObject.name);
-                mcontroller.MaterialChanger(0, false);
+                axis.enabled = true;
+                if(other.transform.parent.gameObject.name == "RenPoints")
+                {
+                    Debug.Log("Leave Points: " + other.gameObject.name);
+                    mcontroller.PMChanger(other.gameObject, false);
+                    mcontroller.MaterialChanger("Ren", false);
+                }
+                else if(other.transform.parent.gameObject.name == "LMH-TaiyinPoints")
+                {
+                    mcontroller.PMChanger(other.gameObject, false);
+                    mcontroller.MaterialChanger("LMH_Taiyin", false);
+                    
+                }
+                
             }
         }
+
+        
 
     }
 }

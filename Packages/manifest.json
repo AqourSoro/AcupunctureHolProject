@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.microsoft.mixedreality.openxr": "file:MixedReality/com.microsoft.mixedreality.openxr-1.0.0.tgz",
+    "com.microsoft.mixedreality.sceneunderstanding": "file:MixedReality/com.microsoft.mixedreality.sceneunderstanding-0.6.0.tgz",
     "com.microsoft.mixedreality.toolkit.examples": "file:MixedReality/com.microsoft.mixedreality.toolkit.examples-2.7.2.tgz",
     "com.microsoft.mixedreality.toolkit.extensions": "file:MixedReality/com.microsoft.mixedreality.toolkit.extensions-2.7.2.tgz",
     "com.microsoft.mixedreality.toolkit.foundation": "file:MixedReality/com.microsoft.mixedreality.toolkit.foundation-2.7.2.tgz",
@@ -14,7 +15,7 @@
     "com.unity.collab-proxy": "1.5.7",
     "com.unity.ide.rider": "2.0.7",
     "com.unity.ide.visualstudio": "2.0.9",
-    "com.unity.ide.vscode": "1.2.3",
+    "com.unity.ide.vscode": "1.2.4",
     "com.unity.test-framework": "1.1.26",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
@@ -50,7 +51,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.microsoft.mixedreality.sceneunderstanding": "file:MixedReality/com.microsoft.mixedreality.sceneunderstanding-0.6.0.tgz"
+    "com.unity.modules.xr": "1.0.0"
   }
 }

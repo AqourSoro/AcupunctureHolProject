@@ -8,6 +8,8 @@ public class EnableController : MonoBehaviour
 {
     private TapToPlace tpComponents;
     public GameObject MeridianSystem;
+
+    public GameObject DockNeedles;
     public TextMesh textTP;
     public TextMesh textM;
     public TextMesh textN;
@@ -64,6 +66,20 @@ public class EnableController : MonoBehaviour
         {
             MeridianSystem.SetActive(false);
             textM.text = "Off";
+        }
+    }
+
+    public void NeedleControl()
+    {
+        if(DockNeedles.active == false)
+        {
+            DockNeedles.SetActive(true);
+            textN.text = "On";
+        }
+        else
+        {
+            DockNeedles.SetActive(false);
+            textN.text = "Off";
         }
     }
 
