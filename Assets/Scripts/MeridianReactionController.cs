@@ -29,7 +29,7 @@ public class MeridianReactionController : MonoBehaviour
 
     private bool active_Ren;
 
-    private List<bool> bools;
+    private bool[] bools;
 
     private bool[] Ren_bools;
     private bool[] LMH_Taiyin_bools;
@@ -40,7 +40,7 @@ public class MeridianReactionController : MonoBehaviour
 
     void Awake()
     {
-        bools = new List<bool>();
+        bools = new bool[14];
         Ren_bools = new bool[24];
         LMH_Taiyin_bools = new bool[11];
     }
@@ -54,10 +54,16 @@ public class MeridianReactionController : MonoBehaviour
     void Update()
     {
         
-        num.text = scale.ToString();
+        
         for(int i = 0; i < Paths.Length; i ++)
         {
-            if(Paths[i] >= 2)
+            num.text =i.ToString() + ": " + Paths[i].ToString();
+            if(Paths[i] >= 3 && i == 13)
+            {
+                ballChanger(i,true);
+                MaterialChanger(i, true);
+            }
+            else if(Paths[i] > 2)
             {
                 ballChanger(i,true);
                 MaterialChanger(i, true);
@@ -71,6 +77,7 @@ public class MeridianReactionController : MonoBehaviour
             {
                 ballChanger(i,false);
                 MaterialChanger(i, false);
+                bools[i] = false;
             
             }
         }
@@ -80,77 +87,22 @@ public class MeridianReactionController : MonoBehaviour
         //num.text = "Num is: " + Ren_pins.ToString();
     }
 
-    public void MaterialChanger(string name, bool a)
-    {
-        switch (name)
-        {
-            case "LMHTaiyin":
-                if(a)
-                {
-                    LMH_Taiyin.GetComponent<Renderer>().material = active;
-                    Paths[0] += 1;
-                }
-                else
-                {
-                    Paths[0] -= 1;
-                    if(Paths[0] == 0)
-                    {
-                        LMH_Taiyin.GetComponent<Renderer>().material = inactive;
-                    }
-                }
-                break;
-            case "LIYangMing":
-                if(a)
-                {
-                    LI_YangMing.GetComponent<Renderer>().material = active;
-                    Paths[1] += 1;
-                }
-                else
-                {
-                    Paths[1] -= 1;
-                    if(Paths[1] == 0)
-                    {
-                        LI_YangMing.GetComponent<Renderer>().material = inactive;
-                    }
-                }
-                break;
-            
-            case "Ren":
-                if(a)
-                {
-                    Ren.GetComponent<Renderer>().material = active;
-                    Paths[13] += 1;
-                }
-                else
-                {
-                    Paths[13] -= 1;
-                    if(Paths[13] == 0)
-                    {
-                        Ren.GetComponent<Renderer>().material = inactive;
-                    }
-                }
-                break;
-
-            
-            default:
-                break;
-                
-        }
-    }
-
+    
     public void MaterialChanger(int order, bool a)
     {
+
         switch (order)
         {
             case 0:
                 if(a)
                 {
                     LMH_Taiyin.GetComponent<Renderer>().material = active;
-                    Paths[0] += 1;
+                    
                 }
                 else
                 {
-                    Paths[0] -= 1;
+                    
+                    
                     if(Paths[0] == 0)
                     {
                         LMH_Taiyin.GetComponent<Renderer>().material = inactive;
@@ -162,14 +114,44 @@ public class MeridianReactionController : MonoBehaviour
                 if(a)
                 {
                     LI_YangMing.GetComponent<Renderer>().material = active;
-                    Paths[1] += 1;
+                    
                 }
                 else
                 {
-                    Paths[1] -= 1;
+                    
                     if(Paths[1] == 0)
                     {
                         LI_YangMing.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 2:
+                if(a)
+                {
+                    STFoot_YangMing.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[1] == 0)
+                    {
+                        STFoot_YangMing.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 3:
+                if(a)
+                {
+                    SPFoot_Taiyin.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[1] == 0)
+                    {
+                        SPFoot_Taiyin.GetComponent<Renderer>().material = inactive;
                     }
                 }
                 break;
@@ -177,11 +159,11 @@ public class MeridianReactionController : MonoBehaviour
                 if(a)
                 {
                     Ren.GetComponent<Renderer>().material = active;
-                    Paths[13] += 1;
+                    
                 }
                 else
                 {
-                    Paths[13] -= 1;
+                    
                     if(Paths[13] == 0)
                     {
                         Ren.GetComponent<Renderer>().material = inactive;
@@ -241,41 +223,14 @@ public class MeridianReactionController : MonoBehaviour
     }
 
 
-    private GameObject meridianFinder(int i)
-    {
-        switch(i)
-        {
-            case 0:
-                return Ren;
-            default:
-                return null;
-        }
-    }
+    
 
     
 
 
 
-    private void activeBall()
-    {
-        for(float i = 1; i < 2; i += 0.1f)
-        {
-            ball.GetComponent<Renderer>().sharedMaterial.SetFloat("Size", i);
-            Debug.Log("Increasing: " + i);
-        }
-        for(float i = 2; i > 1; i -= 0.1f)
-        {
-            ball.GetComponent<Renderer>().sharedMaterial.SetFloat("Size", i);
-            Debug.Log("Decreasing: " + i);
-        }
-        
-    }
+    
 
     
 
-
-    public void setBoolforPoint(bool active, int i)
-    {
-        bools[i] = active;
-    }
 }

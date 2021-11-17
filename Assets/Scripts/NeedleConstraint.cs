@@ -9,6 +9,8 @@ public class NeedleConstraint : MonoBehaviour
     public GameObject SingalCube;
     public GameObject Body;
 
+    private bool isInBody;
+
 
 
 
@@ -43,27 +45,37 @@ public class NeedleConstraint : MonoBehaviour
         }
         if(other.GetType() == typeof(SphereCollider))
         {
-            if (other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
+            if(!isInBody)
             {
-                //axis.enabled = true;
-                if (other.transform.parent.gameObject.name == "RenPoints")
+                if (other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
                 {
-                    Debug.Log("Hit Points: " + other.gameObject.name);
-                    //mcontroller.MaterialChanger("Ren", true);
-                    mcontroller.PMChanger(other.gameObject, true);
-                    mcontroller.PathChanger(13, true);
-                }
-                else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
-                {
-                    mcontroller.PMChanger(other.gameObject, true);
-                    mcontroller.PathChanger(0, true);
-                }
-                else if(other.transform.parent.gameObject.name == "LIYangMingPoints")
-                {
-                    mcontroller.PMChanger(other.gameObject, true);
-                    mcontroller.PathChanger(1, true);
+                    //axis.enabled = true;
+                    if (other.transform.parent.gameObject.name == "RenPoints")
+                    {
+                        Debug.Log("Hit Points: " + other.gameObject.name);
+                        //mcontroller.MaterialChanger("Ren", true);
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(13, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(0, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "LIYangMingPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(1, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "STFoot-YangMingPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(2, true);
+                    }
+                    isInBody = true;
                 }
             }
+            
         }
         
 
@@ -80,34 +92,48 @@ public class NeedleConstraint : MonoBehaviour
             //cubeRenderer.material.SetColor("_Color", Color.red);
             axis.enabled = false;
         }
-
-        if(other.GetType() == typeof(SphereCollider))
+        if(isInBody)
         {
-            if(other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
+            if(other.GetType() == typeof(SphereCollider))
             {
-                //axis.enabled = true;
-                if(other.transform.parent.gameObject.name == "RenPoints")
+                if(other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
                 {
-                    Debug.Log("Leave Points: " + other.gameObject.name);
-                    mcontroller.PMChanger(other.gameObject, false);
-                    mcontroller.PathChanger(13, false);
+                    //axis.enabled = true;
+                    if(other.transform.parent.gameObject.name == "RenPoints")
+                    {
+                        Debug.Log("Leave Points: " + other.gameObject.name);
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(13, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(0, false);
+                        
+                    }
+                    else if(other.transform.parent.gameObject.name == "LIYangMingPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(1, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "STFoot-YangMingPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(2, false);
+                    }
+                    isInBody = false;
                 }
-                else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
-                {
-                    mcontroller.PMChanger(other.gameObject, false);
-                    mcontroller.PathChanger(0, false);
-                    
-                }
-                else if(other.transform.parent.gameObject.name == "LIYangMingPoints")
-                {
-                    mcontroller.PMChanger(other.gameObject, false);
-                    mcontroller.PathChanger(1, false);
-                }
-                
             }
         }
+        
 
         
 
     }
+
+    private void meridianReaction()
+    {
+
+    }
+
 }

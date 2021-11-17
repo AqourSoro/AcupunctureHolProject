@@ -5,7 +5,7 @@ Shader "Custom/HighLightTest"
 		_MainTex("Texture(RGB)",2D) = "grey"{}	//主纹理
 		_Color("Color",Color) = (0,0,0,0)		//主纹理颜色
 		_AtmoColor("Atmosphere Color",Color) = (0,0,0,0)	//光晕颜色
-		_Size("Size",Range(0,2)) = 0.1		//光晕范围
+		_Size("Size",Range(0,20)) = 0.1		//光晕范围
 		_OutLightPow("Falloff",Range(1,10)) = 5		//光晕系数
 		_OutLightStrength("Transparency",Range(5,20)) = 15	//光晕强度
 	}
