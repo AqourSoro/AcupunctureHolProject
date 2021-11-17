@@ -12,6 +12,8 @@ public class NeedleConstraint : MonoBehaviour
 
 
 
+
+
     private MeridianReactionController mcontroller;
 
     // Start is called before the first frame update
@@ -43,17 +45,23 @@ public class NeedleConstraint : MonoBehaviour
         {
             if (other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
             {
-                axis.enabled = true;
+                //axis.enabled = true;
                 if (other.transform.parent.gameObject.name == "RenPoints")
                 {
                     Debug.Log("Hit Points: " + other.gameObject.name);
-                    mcontroller.MaterialChanger("Ren", true);
+                    //mcontroller.MaterialChanger("Ren", true);
                     mcontroller.PMChanger(other.gameObject, true);
+                    mcontroller.PathChanger(13, true);
                 }
-                else if(other.transform.parent.gameObject.name == "LMH-TaiyinPoints")
+                else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
                 {
-                    mcontroller.MaterialChanger("LMH_Taiyin", true);
                     mcontroller.PMChanger(other.gameObject, true);
+                    mcontroller.PathChanger(0, true);
+                }
+                else if(other.transform.parent.gameObject.name == "LIYangMingPoints")
+                {
+                    mcontroller.PMChanger(other.gameObject, true);
+                    mcontroller.PathChanger(1, true);
                 }
             }
         }
@@ -77,18 +85,23 @@ public class NeedleConstraint : MonoBehaviour
         {
             if(other.gameObject.tag == "Point" && this.gameObject.tag == "Needles")
             {
-                axis.enabled = true;
+                //axis.enabled = true;
                 if(other.transform.parent.gameObject.name == "RenPoints")
                 {
                     Debug.Log("Leave Points: " + other.gameObject.name);
                     mcontroller.PMChanger(other.gameObject, false);
-                    mcontroller.MaterialChanger("Ren", false);
+                    mcontroller.PathChanger(13, false);
                 }
-                else if(other.transform.parent.gameObject.name == "LMH-TaiyinPoints")
+                else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
                 {
                     mcontroller.PMChanger(other.gameObject, false);
-                    mcontroller.MaterialChanger("LMH_Taiyin", false);
+                    mcontroller.PathChanger(0, false);
                     
+                }
+                else if(other.transform.parent.gameObject.name == "LIYangMingPoints")
+                {
+                    mcontroller.PMChanger(other.gameObject, false);
+                    mcontroller.PathChanger(1, false);
                 }
                 
             }

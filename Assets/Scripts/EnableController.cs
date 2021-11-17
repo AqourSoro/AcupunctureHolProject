@@ -10,19 +10,41 @@ public class EnableController : MonoBehaviour
     public GameObject MeridianSystem;
 
     public GameObject DockNeedles;
+
+    public GameObject ball;
+
+    public GameObject KnowledgePanel;
     public TextMesh textTP;
     public TextMesh textM;
     public TextMesh textN;
+    public TextMesh textK;
+
+    private MeridianReactionController meridianReactionController;
 
     void Start()
     {
         tpComponents = this.GetComponent<TapToPlace>();
+        meridianReactionController = this.GetComponent<MeridianReactionController>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         
+    }
+
+    public void controlVisiable(GameObject gameObject, TextMesh textComponents)
+    {
+        if (gameObject.active == false)
+        {
+            gameObject.SetActive(true);
+            textComponents.text = "On";
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            textComponents.text = "Off";
+        }
     }
 
     public void TPButtonControl()
@@ -80,6 +102,20 @@ public class EnableController : MonoBehaviour
         {
             DockNeedles.SetActive(false);
             textN.text = "Off";
+        }
+    }
+
+    public void panelControl()
+    {
+        if(KnowledgePanel.active == false)
+        {
+            KnowledgePanel.SetActive(true);
+            textK.text = "On";
+        }
+        else
+        {
+            KnowledgePanel.SetActive(false);
+            textK.text = "Off";
         }
     }
 

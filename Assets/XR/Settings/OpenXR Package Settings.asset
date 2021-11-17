@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2e2731103cdda44af77955a0b4814c, type: 3}
   m_Name: AppRemotingPlugin WSA
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Holographic Remoting remote app
   version: 1.0.0
   featureIdInternal: com.microsoft.openxr.feature.appremoting
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056125dd64c0ed540b40a4af74f7b495, type: 3}
   m_Name: RuntimeDebuggerOpenXRFeature WSA
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Runtime Debugger
   version: 1
   featureIdInternal: com.unity.openxr.features.runtimedebugger
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_remoteHostPort: 8265
   m_maxBitrate: 20000
   m_videoCodec: 0
-  m_enableAudio: 0
+  m_enableAudio: 1
 --- !u!114 &234167009880086769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   - {fileID: 87492023802354594}
   - {fileID: -3424761898946721735}
   - {fileID: 234167009880086769}
-  m_renderMode: 1
+  m_renderMode: 0
   m_depthSubmissionMode: 2
 --- !u!114 &4970036698852237270
 MonoBehaviour:
