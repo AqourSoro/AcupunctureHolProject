@@ -15,7 +15,11 @@ public class MeridianReactionController : MonoBehaviour
     public Material bLight;
 
     public GameObject LMH_Taiyin;
-    public GameObject LIYangMing;
+    public GameObject LI_YangMing;
+
+    public GameObject STFoot_YangMing;
+    public GameObject SPFoot_Taiyin;
+    public GameObject HTHand_Shaoyin;
     public GameObject Ren;
     
 
@@ -98,7 +102,7 @@ public class MeridianReactionController : MonoBehaviour
             case "LIYangMing":
                 if(a)
                 {
-                    LIYangMing.GetComponent<Renderer>().material = active;
+                    LI_YangMing.GetComponent<Renderer>().material = active;
                     Paths[1] += 1;
                 }
                 else
@@ -106,7 +110,7 @@ public class MeridianReactionController : MonoBehaviour
                     Paths[1] -= 1;
                     if(Paths[1] == 0)
                     {
-                        LIYangMing.GetComponent<Renderer>().material = inactive;
+                        LI_YangMing.GetComponent<Renderer>().material = inactive;
                     }
                 }
                 break;
@@ -157,7 +161,7 @@ public class MeridianReactionController : MonoBehaviour
             case 1:
                 if(a)
                 {
-                    LIYangMing.GetComponent<Renderer>().material = active;
+                    LI_YangMing.GetComponent<Renderer>().material = active;
                     Paths[1] += 1;
                 }
                 else
@@ -165,7 +169,7 @@ public class MeridianReactionController : MonoBehaviour
                     Paths[1] -= 1;
                     if(Paths[1] == 0)
                     {
-                        LIYangMing.GetComponent<Renderer>().material = inactive;
+                        LI_YangMing.GetComponent<Renderer>().material = inactive;
                     }
                 }
                 break;
