@@ -17,6 +17,7 @@ public class NeedleConstraint : MonoBehaviour
 
 
     private MeridianReactionController mcontroller;
+    private AcuInformation AcuInfoController;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class NeedleConstraint : MonoBehaviour
         var cubeRenderer = SingalCube.GetComponent<Renderer>();
         cubeRenderer.material.SetColor("_Color", Color.red);
         mcontroller = Body.GetComponent<MeridianReactionController>();
+        AcuInfoController = Body.GetComponent<AcuInformation>();
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class NeedleConstraint : MonoBehaviour
                         //mcontroller.MaterialChanger("Ren", true);
                         mcontroller.PMChanger(other.gameObject, true);
                         mcontroller.PathChanger(13, true);
+                        AcuInfoController.updateRenPointInfo(other.gameObject.name);
                     }
                     else if(other.transform.parent.gameObject.name == "LMHTaiyinPoints")
                     {
@@ -72,7 +75,43 @@ public class NeedleConstraint : MonoBehaviour
                         mcontroller.PMChanger(other.gameObject, true);
                         mcontroller.PathChanger(2, true);
                     }
+                    else if(other.transform.parent.gameObject.name == "SPFoot-TaiyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(3, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "HTHand-ShaoyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(4, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "SI Hand-TaiYangPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(5, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "BL Foot-TaiyangPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(6, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "KI Foot-ShaoyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(7, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "PC Hand-JueyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(8, true);
+                    }
+                    else if(other.transform.parent.gameObject.name == "SJ Hand-ShaoYangPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, true);
+                        mcontroller.PathChanger(9, true);
+                    }
                     isInBody = true;
+                    
                 }
             }
             
@@ -120,6 +159,41 @@ public class NeedleConstraint : MonoBehaviour
                     {
                         mcontroller.PMChanger(other.gameObject, false);
                         mcontroller.PathChanger(2, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "SPFoot-TaiyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(3, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "HTHand-ShaoyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(4, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "SI Hand-TaiYangPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(5, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "BL Foot-TaiyangPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(6, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "KI Foot-ShaoyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(7, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "PC Hand-JueyinPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(8, false);
+                    }
+                    else if(other.transform.parent.gameObject.name == "SJ Hand-ShaoYangPoints")
+                    {
+                        mcontroller.PMChanger(other.gameObject, false);
+                        mcontroller.PathChanger(9, false);
                     }
                     isInBody = false;
                 }

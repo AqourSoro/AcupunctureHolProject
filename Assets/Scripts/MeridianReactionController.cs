@@ -20,6 +20,15 @@ public class MeridianReactionController : MonoBehaviour
     public GameObject STFoot_YangMing;
     public GameObject SPFoot_Taiyin;
     public GameObject HTHand_Shaoyin;
+    public GameObject SIHand_TaiYang;
+    public GameObject BLFoot_Taiyang;
+
+    public GameObject KIFoot_Shaoyin;
+    public GameObject PCHand_Jueyin;
+
+
+    public GameObject TheSanjiaoMeridianOfHand_ShaoYang;
+
     public GameObject Ren;
     
 
@@ -34,8 +43,7 @@ public class MeridianReactionController : MonoBehaviour
     private bool[] Ren_bools;
     private bool[] LMH_Taiyin_bools;
 
-    private float scale = 1;
-    // Start is called before the first frame update
+    
 
 
     void Awake()
@@ -57,7 +65,7 @@ public class MeridianReactionController : MonoBehaviour
         
         for(int i = 0; i < Paths.Length; i ++)
         {
-            num.text =i.ToString() + ": " + Paths[i].ToString();
+            num.text ="13 : " + Paths[13].ToString();
             if(Paths[i] >= 3 && i == 13)
             {
                 ballChanger(i,true);
@@ -103,7 +111,7 @@ public class MeridianReactionController : MonoBehaviour
                 {
                     
                     
-                    if(Paths[0] == 0)
+                    if(Paths[order] == 0)
                     {
                         LMH_Taiyin.GetComponent<Renderer>().material = inactive;
                     }
@@ -119,7 +127,7 @@ public class MeridianReactionController : MonoBehaviour
                 else
                 {
                     
-                    if(Paths[1] == 0)
+                    if(Paths[order] == 0)
                     {
                         LI_YangMing.GetComponent<Renderer>().material = inactive;
                     }
@@ -134,7 +142,7 @@ public class MeridianReactionController : MonoBehaviour
                 else
                 {
                     
-                    if(Paths[1] == 0)
+                    if(Paths[order] == 0)
                     {
                         STFoot_YangMing.GetComponent<Renderer>().material = inactive;
                     }
@@ -149,12 +157,103 @@ public class MeridianReactionController : MonoBehaviour
                 else
                 {
                     
-                    if(Paths[1] == 0)
+                    if(Paths[order] == 0)
                     {
                         SPFoot_Taiyin.GetComponent<Renderer>().material = inactive;
                     }
                 }
                 break;
+            case 4:
+                if(a)
+                {
+                    HTHand_Shaoyin.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[order] == 0)
+                    {
+                        HTHand_Shaoyin.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 5:
+                if(a)
+                {
+                    SIHand_TaiYang.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[order] == 0)
+                    {
+                        SIHand_TaiYang.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 6:
+                if(a)
+                {
+                    BLFoot_Taiyang.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[order] == 0)
+                    {
+                        BLFoot_Taiyang.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 7:
+                if(a)
+                {
+                    KIFoot_Shaoyin.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[order] == 0)
+                    {
+                        KIFoot_Shaoyin.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 8:
+                if(a)
+                {
+                    PCHand_Jueyin.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[order] == 0)
+                    {
+                        PCHand_Jueyin.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            case 9:
+                if(a)
+                {
+                    TheSanjiaoMeridianOfHand_ShaoYang.GetComponent<Renderer>().material = active;
+                    
+                }
+                else
+                {
+                    
+                    if(Paths[order] == 0)
+                    {
+                        TheSanjiaoMeridianOfHand_ShaoYang.GetComponent<Renderer>().material = inactive;
+                    }
+                }
+                break;
+            
             case 13:
                 if(a)
                 {
@@ -164,7 +263,7 @@ public class MeridianReactionController : MonoBehaviour
                 else
                 {
                     
-                    if(Paths[13] == 0)
+                    if(Paths[order] == 0)
                     {
                         Ren.GetComponent<Renderer>().material = inactive;
                     }
@@ -185,6 +284,7 @@ public class MeridianReactionController : MonoBehaviour
             case 0:
                 ball_arm.SetActive(a);
                 break;
+
             case 13:
                 ball.SetActive(a);
                 break;
